@@ -16,6 +16,7 @@ import { useParams } from "react-router-dom";
 
         asyncFunc(categoryId)
         .then(response =>{
+            console.log("respuesta",response)
             setProducts(response)
         })
         .catch((err)=>{
