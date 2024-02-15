@@ -3,19 +3,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import  logo  from './img/farmacia.png';
 import CartWidget from '../CartWidget/CartWidget'
-
+import { NavLink, Link  } from 'react-router-dom';
 function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-info">
       <Container>
         <Navbar.Brand>
           <div className='logo'>
+          <Link to='/'>
           <img
               src={logo}
               width="60px"
               height="60px"
               className="d-inline-block align-top"
             />
+            </Link>
              <h1>Mi Farmacia</h1>
           </div>
           </Navbar.Brand>
@@ -25,9 +27,9 @@ function NavBar() {
             
           </Nav>
           <Nav>
-            <Nav.Link>Cosméticos</Nav.Link>
-            <Nav.Link>Cuidado Personal</Nav.Link>
-            <Nav.Link>Medicamentos</Nav.Link>
+            <NavLink to={`/category/cosmeticos`} >Cosméticos</NavLink>
+            <NavLink to={`/category/cuidado_personal`}>Cuidado Personal</NavLink>
+            <NavLink to={`/category/medicamentos`}>Medicamentos</NavLink>
             
           </Nav>
           <div className='cart'>
